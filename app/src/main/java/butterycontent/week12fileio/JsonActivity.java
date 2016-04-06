@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.InputStream;
@@ -56,7 +57,14 @@ public class JsonActivity extends AppCompatActivity {
 
             String name = jsonObject.getString("firstName");
 
-            Toast.makeText(this,name,Toast.LENGTH_LONG).show();
+
+            //get stuff from json file in an array
+
+            JSONArray jsonArray = jsonObject.getJSONArray("courses");
+            JSONObject json = (JSONObject) jsonArray.get(0);
+            String grade = json.getString("math");
+
+            Toast.makeText(this,name + " = " + grade,Toast.LENGTH_LONG).show();
 
 
         }catch(Exception e){
@@ -64,5 +72,10 @@ public class JsonActivity extends AppCompatActivity {
         }
 
     }
+
+
+
+
+
 
 }
