@@ -64,6 +64,8 @@ public class JsonActivity extends AppCompatActivity {
             JSONObject json = (JSONObject) jsonArray.get(0);
             String grade = json.getString("math");
 
+            //line here does the top three lines above in one line
+          //  String minified = ((JSONObject) jsonObject.getJSONArray("courses").get(0)).getString("math");
             Toast.makeText(this,name + " = " + grade,Toast.LENGTH_LONG).show();
 
 
