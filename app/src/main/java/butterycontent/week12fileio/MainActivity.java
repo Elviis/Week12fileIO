@@ -14,6 +14,10 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Console;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -36,7 +40,51 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        JSONObject json = createJSONObject();
+        //read json file
+        try {
+            String name = json.getString("name");
+
+        } catch (JSONException e) {
+
+            e.printStackTrace();
+
+        }
+
+        Log.d("JSON", json.toString());
     }
+
+    private JSONObject createJSONObject()
+    {
+        JSONObject jsonObject = new JSONObject();
+        JSONObject jsonObject2 = new JSONObject();
+        JSONArray jsonArray = new JSONArray();
+
+        try {
+
+            jsonObject.put("name","Tim");
+            jsonObject.put("age",24);
+            jsonObject2.put("name","Steve");
+            jsonObject2.put("age","32");
+
+            jsonArray.put(jsonObject);
+            jsonArray.put(jsonObject2);
+
+            Log.d("JSONarray", jsonArray.toString());
+
+
+
+        } catch (JSONException e) {
+
+            e.printStackTrace();
+
+        }
+
+        return jsonObject;
+    }
+
+
 
     //function to save a file for the save button click listener
     public void saveToFile(View v){
