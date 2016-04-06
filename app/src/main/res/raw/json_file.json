@@ -1,0 +1,25 @@
+{
+  "firstName": "Tim",
+  "lastName": "Joe",
+  "age": 24,
+  "address": {
+    "street": "Front Street",
+    "city": "Toronto",
+    "Province": "On",
+    "zip": "M5L1R3"
+  },
+  "courses": [
+    {
+      "math": "A"
+    },
+    {
+      "programming": "B"
+    },
+    {
+      "Android": "B+"
+    },
+    {
+      "iOS": "C"
+    }
+  ]
+}

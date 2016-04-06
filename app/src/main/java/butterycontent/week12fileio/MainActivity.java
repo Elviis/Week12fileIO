@@ -1,6 +1,7 @@
 package butterycontent.week12fileio;
 
 import android.content.Context;
+import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         //read json file
         try {
             String name = json.getString("name");
+
 
         } catch (JSONException e) {
 
@@ -151,6 +153,12 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
+
+            Intent intent = new Intent(this, JsonActivity.class);
+            startActivity(intent);
+
+
             return true;
         }
 
